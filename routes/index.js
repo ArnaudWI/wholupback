@@ -52,9 +52,9 @@ router.get('/signin', (req, res) => {
     password: req.query.password
   },(error, user) => {
     if (!user) {
-      res.json({ result: false, isUserExist: false, user });
+      res.json({ result: false, isUserExist: false});
     } else {
-      res.json({ result: true, isUserExist: true, });
+      res.json({ result: true, isUserExist: true, user });
     }
   });
 });
