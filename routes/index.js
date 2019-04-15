@@ -47,15 +47,12 @@ req.body.email !== '' && req.body.password !== '') {
 } else {
   console.log('error')
   res.json({ result: false, error: 'Incorrect data'});
-}
-
-
-
+  }
 });
 
 /* connexion à l'app. */
 router.get('/signin', (req, res) => {
-
+// hash du mdp 
     userModel.findOne({
       email: req.query.email,
       password: hash(req.query.password)
